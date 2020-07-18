@@ -1,44 +1,36 @@
 ﻿using System;
+using App1.Logica;
 
 namespace ConsoleApp1
 {
     class Program
     {
+        static readonly Random random = new Random();
         static void Main(string[] args)
         {
-            Console.WriteLine("Hola!");
+            Console.WriteLine("Hello World!");
 
-            var random = new Random();
             var persona = new Persona
             {
                 Id = random.Next(),
                 Nombre = "José",
                 Apellido = "Mendoza",
-                Trabajo = new Trabajo
+                Cargo = "Contador",
+                Empresa = new Empresa
                 {
-                    Id = random.Next(),
-                    Nombre = "Programador",
-                    Cargo = "Programador Junior",
-                    Sueldo = 1500,
-                },
-                Portatil = new Portatil
-                {
-                    Id = random.Next(),
-                    Marca = "DELL",
-                    Procesador = "Intel Core i7",
-                    Precio = 1200,
-                },
-                Ubicacion = new Ubicacion
-                {
-                    Id = random.Next(),
-                    Ciudad = "Quito",
+                    Nombre = "Marshilla",
                     Direccion = "José Tamayo &, Quito 170143",
                 }
             };
+            var producto = new Producto
+            {
+                Nombre = "Utencillos Basicos",
+                Material = "Almidón de Maíz",
+            };
 
             Console.WriteLine(persona.Saludar());
-            Console.WriteLine(persona.Trabajar());
-            Console.WriteLine(persona.Ubicar());
+            Console.WriteLine(persona.Trasladar());
+            Console.WriteLine(persona.Producir());
 
             Console.ReadKey();
         }

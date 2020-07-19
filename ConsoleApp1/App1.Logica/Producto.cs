@@ -6,8 +6,9 @@
         {
         }
         public string Nombre { get; set; }
-        public string Material { get; set; }
-        public TipoMercaderia Produccion { get; set; }
+        public Produccion Produccion { get; set; }
+        public Empresa Productividad { get; set; }
+        
         public string Producir()
         {
             return $"La empresa produce mercadería de {Produccion} con materiales biodegradables.";

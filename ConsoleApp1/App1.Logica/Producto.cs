@@ -11,7 +11,7 @@
         
         public string Producir()
         {
-            return $"La empresa produce mercadería de {Produccion} con materiales biodegradables.";
+            return $"La empresa produce mercadería de {Produccion} con {Produccion.Material} biodegradables.";
         }
     }
 }

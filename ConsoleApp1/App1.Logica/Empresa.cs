@@ -16,14 +16,19 @@ namespace App1.Logica
 
         public Producto NewProducto()
         {
-            var newProducto = new Producto();
-            newProducto.Nombre = "Recipientes";
-            newProducto.Produccion = new Produccion 
+            var newProducto = new Producto
             {
-                TipoMercaderia = TipoMercaderia.Contenedores,
-                Material = "Almidón de Maíz"
+                Nombre = "Recipientes",
+                Produccion = new Produccion 
+                {
+                    TipoMercaderia = TipoMercaderia.Contenedores,
+                    Material = "Almidón de Maíz"
+                },
+                Productividad = this
             };
-            return;
+            Productos.Add(newProducto);
+
+            return newProducto;
         }
 
     }
